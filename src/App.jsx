@@ -269,33 +269,39 @@ function FolderDetail({ folder, txns, folders, onBack, onAddTxn, onEditTxn, onDe
 
 // ─── MAIN APP ─────────────────────────────────────────────────────────────────
 export default function App() {
-  const [dark, setDark]   = useState(true);
+  const [dark, setDark] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("kp_dark")) ?? true; }
+  catch { return true; }
+  });
   const [page, setPage]   = useState("dashboard");
   const [txns, setTxns] = useState(() => {
-  try { return JSON.parse(localStorage.getItem("kp_txns")) || []; }
-  catch { return []; }
+    try { return JSON.parse(localStorage.getItem("kp_txns")) || []; }
+    catch { return []; }
   });
   const [folders, setFolders] = useState(() => {
-  try { return JSON.parse(localStorage.getItem("kp_folders")) || []; }
-  catch { return []; }
+    try { return JSON.parse(localStorage.getItem("kp_folders")) || []; }
+    catch { return []; }
   });
   const [budgets, setBudgets] = useState(() => {
-  try { return JSON.parse(localStorage.getItem("kp_budgets")) || {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
-  catch { return {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
+    try { return JSON.parse(localStorage.getItem("kp_budgets")) || {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
+    catch { return {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
   });
-
+  
   useEffect(() => {
-  localStorage.setItem("kp_txns", JSON.stringify(txns));
+    localStorage.setItem("kp_txns", JSON.stringify(txns));
   }, [txns]);
-
+  
   useEffect(() => {
-  localStorage.setItem("kp_folders", JSON.stringify(folders));
+    localStorage.setItem("kp_folders", JSON.stringify(folders));
   }, [folders]);
-
+  
   useEffect(() => {
-  localStorage.setItem("kp_budgets", JSON.stringify(budgets));
+    localStorage.setItem("kp_budgets", JSON.stringify(budgets));
   }, [budgets]);
-
+  
+  useEffect(() => {
+  localStorage.setItem("kp_dark", JSON.stringify(dark));
+  }, [dark]);
   // folder modals
   const [showNewFolder, setShowNewFolder] = useState(false);
   const [editFolder, setEditFolder]       = useState(null);
