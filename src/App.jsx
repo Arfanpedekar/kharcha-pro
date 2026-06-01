@@ -271,8 +271,30 @@ function FolderDetail({ folder, txns, folders, onBack, onAddTxn, onEditTxn, onDe
 export default function App() {
   const [dark, setDark]   = useState(true);
   const [page, setPage]   = useState("dashboard");
-  const [txns, setTxns]   = useState([]);         // starts empty
-  const [folders, setFolders] = useState([]);     // starts empty
+  const [txns, setTxns] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("kp_txns")) || []; }
+  catch { return []; }
+  });
+  const [folders, setFolders] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("kp_folders")) || []; }
+  catch { return []; }
+  });
+  const [budgets, setBudgets] = useState(() => {
+  try { return JSON.parse(localStorage.getItem("kp_budgets")) || {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
+  catch { return {Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000}; }
+  });
+
+  useEffect(() => {
+  localStorage.setItem("kp_txns", JSON.stringify(txns));
+  }, [txns]);
+
+  useEffect(() => {
+  localStorage.setItem("kp_folders", JSON.stringify(folders));
+  }, [folders]);
+
+  useEffect(() => {
+  localStorage.setItem("kp_budgets", JSON.stringify(budgets));
+  }, [budgets]);
 
   // folder modals
   const [showNewFolder, setShowNewFolder] = useState(false);
@@ -292,8 +314,7 @@ export default function App() {
   const [filterType, setFilterType] = useState("All");
   const [filterMon, setFilterMon]   = useState("All");
   const [filterFol, setFilterFol]   = useState("All");
-  const [budgets, setBudgets]       = useState({Food:3000,Petrol:3000,Recharge:1000,Household:20000,Travel:5000,Electronics:5000,Medical:2000,Clothing:3000,"Internet/WiFi":1000,Documents:3000,Other:3000});
-
+  
   // ── derived ──
   const totalIncome  = useMemo(()=>txns.filter(t=>t.type==="income").reduce((s,t)=>s+t.amount,0),[txns]);
   const totalExpense = useMemo(()=>txns.filter(t=>t.type==="expense").reduce((s,t)=>s+t.amount,0),[txns]);
