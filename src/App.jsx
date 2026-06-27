@@ -360,10 +360,10 @@ export default function App() {
     if(openFolder===delFolder.id) setOpenFolder(null);
     setDelFolder(null);
   };
-  const saveTxn = form => {
+  const saveTxn = (form, isEdit) => {
     const cat = form.type==="income"?"Income":form.category;
-    if(editTxn){
-      setTxns(ts=>ts.map(t=>t.id===editTxn.id?{...t,...form,amount:parseFloat(form.amount),category:cat}:t));
+    if(isEdit){
+      setTxns(ts=>ts.map(t=>t.id===isEdit?{...t,...form,amount:parseFloat(form.amount),category:cat}:t));
       setEditTxn(null);
     } else {
       const fid = addFolderCtx || form.folderId || "";
@@ -764,7 +764,7 @@ export default function App() {
         {showAddTxn&&<TxnForm key={"add-"+addFolderCtx} folders={folders} defaultFolderId={addFolderCtx} onSave={saveTxn} onCancel={()=>{setShowAddTxn(false);setAddFolderCtx("");}}/>}
       </Modal>
       <Modal open={!!editTxn} onClose={()=>setEditTxn(null)} title="Edit Transaction" wide>
-        {editTxn&&<TxnForm key={editTxn.id} initial={editTxn} folders={folders} onSave={saveTxn} onCancel={()=>setEditTxn(null)}/>}
+        {editTxn&&<TxnForm key={editTxn.id} initial={editTxn} folders={folders} onSave={(form)=>saveTxn(form, editTxn.id)} onCancel={()=>setEditTxn(null)}/>}
       </Modal>
       <Modal open={!!delTxnId} onClose={()=>setDelTxnId(null)} title="Delete Transaction">
         <div style={{textAlign:"center",padding:"8px 0 4px"}}>
