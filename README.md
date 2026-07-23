@@ -1,91 +1,155 @@
-# 💹 KharchaPro — Personal Expense Tracker
+<div align="center">
 
-> A modern, folder-based personal finance tracker built with React. Track every rupee with folders, categories, charts, and CSV export — completely free to use.
+<img src="./screenshots/banner.svg" width="100%" alt="KharchaPro banner" />
 
-![KharchaPro](https://img.shields.io/badge/Built%20With-React-61dafb?style=flat-square&logo=react)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![Deploy](https://img.shields.io/badge/Deployed%20On-GitHub%20Pages-black?style=flat-square&logo=github)
+# 💹 KharchaPro
+
+**A modern, folder-based personal finance tracker — track every rupee with folders, categories, charts, and CSV export.**
+
+![React](https://img.shields.io/badge/React_18-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Recharts](https://img.shields.io/badge/Recharts-8884D8?style=for-the-badge&logo=chartdotjs&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?style=for-the-badge&logo=github&logoColor=white)
+
+[![License: MIT](https://img.shields.io/github/license/arfanpedekar/kharcha-pro?style=flat-square&color=green)](./LICENSE)
+![Last Commit](https://img.shields.io/github/last-commit/arfanpedekar/kharcha-pro?style=flat-square&color=blue)
+![Repo Size](https://img.shields.io/github/repo-size/arfanpedekar/kharcha-pro?style=flat-square&color=orange)
+![Stars](https://img.shields.io/github/stars/arfanpedekar/kharcha-pro?style=flat-square&color=yellow)
+
+**[🌐 Live Demo](https://arfanpedekar.github.io/kharcha-pro)** · **[📸 Screenshots](#-screenshots)** · **[🚀 Getting Started](#-getting-started)** · **[✨ Features](#-features)**
+
+</div>
 
 ---
 
-## 🌐 Live Demo
+## 📖 Table of Contents
 
-👉 **[https://arfanpedekar.github.io/kharcha-pro](https://arfanpedekar.github.io/kharcha-pro)**
+- [Screenshots](#-screenshots)
+- [Features](#-features)
+- [Categories](#️-categories)
+- [Getting Started](#-getting-started)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [How to Use](#-how-to-use)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
 ---
 
 ## 📸 Screenshots
 
-| Dashboard | Folders | Analytics |
-|-----------|---------|-----------|
-| Overview with stats, charts & folder progress | Create folders with title, amount & color | Pie chart, bar graph & budget breakdown |
+<div align="center">
+
+| Dashboard | Folders |
+|:---:|:---:|
+| <img src="./screenshots/dashboard.svg" width="420" alt="Dashboard preview" /> | <img src="./screenshots/folders.svg" width="420" alt="Folders preview" /> |
+
+<img src="./screenshots/analytics.svg" width="850" alt="Analytics preview" />
+
+**Analytics** — spending breakdown & income vs expense trend
+
+</div>
+
+> These previews are rebuilt from the app's real colors and components (`src/App.jsx`), not live captures. Swap them for real screenshots anytime — run `npm run dev`, capture each view, and drop the images into `/screenshots`.
 
 ---
 
 ## ✨ Features
 
-### 📁 Folder System
-- Create folders with a **title**, **target amount**, and optional **note**
-- Assign any transaction to a folder
-- Each folder tracks: amount used, remaining balance, over-budget alerts
+<table>
+<tr>
+<td width="33%" valign="top">
+
+### 📁 Folders
+- Title, target amount & note
+- Assign transactions to folders
+- Used / remaining / over-budget tracking
 - Visual progress bar per folder
-- Delete folders safely — transactions move to Unassigned
+- Safe delete → moves txns to Unassigned
+
+</td>
+<td width="33%" valign="top">
 
 ### 💰 Transactions
-- Add **Income** or **Expense** transactions
-- Fields: Amount, Date, Description, Category, Notes, Folder
-- **Edit** and **Delete** any transaction
-- Filter by Type, Category, Month, and Folder
-- Full-text search across all transactions
+- Income or Expense entries
+- Amount, date, description, category, notes, folder
+- Edit & delete anytime
+- Filter by type, category, month, folder
+- Full-text search
+
+</td>
+<td width="33%" valign="top">
 
 ### 📊 Dashboard
-- Total Income, Total Expenses, Balance, Savings Rate
+- Income, expenses, balance, savings rate
 - Recent transactions feed
-- Spending by category (donut chart)
+- Spending-by-category donut chart
 - Folder progress overview
-- Top 5 spending categories with budget indicators
+- Top 5 categories vs budget
+
+</td>
+</tr>
+<tr>
+<td width="33%" valign="top">
 
 ### 📈 Analytics
-- Pie chart — spending by category
-- Bar chart — monthly income vs expenses
-- Category breakdown table vs set budgets
-- Folder summary with budget status
+- Pie chart — spend by category
+- Bar chart — income vs expense by month
+- Category breakdown vs budgets
+- Folder summary with status
+
+</td>
+<td width="33%" valign="top">
 
 ### 📄 Reports
 - Monthly financial summary
 - Full transaction log
-- Category analysis with percentages
-- **Export all data to CSV** (works with Excel & Google Sheets)
+- Category % analysis
+- **Export to CSV** (Excel / Sheets ready)
 
-### ⚙️ Settings
-- Set monthly **budget limits** per category
-- **Dark / Light mode** toggle
-- Data export from settings
+</td>
+<td width="33%" valign="top">
 
-### 🔔 Smart Alerts
-- ⚠️ Low balance warning banner
-- Over-budget indicators on folders and categories
+### ⚙️ Settings & Alerts
+- Monthly budget limits per category
+- Dark / light mode toggle
+- ⚠️ Low balance warnings
+- Over-budget indicators everywhere
+
+</td>
+</tr>
+</table>
 
 ---
 
 ## 🗂️ Categories
 
-| Icon | Category | Icon | Category |
-|------|----------|------|----------|
-| 🍱 | Food | 💊 | Medical |
-| ⛽ | Petrol | 👕 | Clothing |
-| 📱 | Recharge | 📶 | Internet/WiFi |
-| 🏠 | Household | 📄 | Documents |
-| ✈️ | Travel | 🔖 | Other |
-| 💻 | Electronics | 💰 | Income |
+<div align="center">
+
+![Food](https://img.shields.io/badge/🍱_Food-f59e0b?style=flat-square&labelColor=1a1d27&color=f59e0b)
+![Petrol](https://img.shields.io/badge/⛽_Petrol-ef4444?style=flat-square&labelColor=1a1d27&color=ef4444)
+![Recharge](https://img.shields.io/badge/📱_Recharge-8b5cf6?style=flat-square&labelColor=1a1d27&color=8b5cf6)
+![Household](https://img.shields.io/badge/🏠_Household-06b6d4?style=flat-square&labelColor=1a1d27&color=06b6d4)
+![Travel](https://img.shields.io/badge/✈️_Travel-3b82f6?style=flat-square&labelColor=1a1d27&color=3b82f6)
+![Electronics](https://img.shields.io/badge/💻_Electronics-6366f1?style=flat-square&labelColor=1a1d27&color=6366f1)
+
+![Medical](https://img.shields.io/badge/💊_Medical-ec4899?style=flat-square&labelColor=1a1d27&color=ec4899)
+![Clothing](https://img.shields.io/badge/👕_Clothing-f97316?style=flat-square&labelColor=1a1d27&color=f97316)
+![Internet/WiFi](https://img.shields.io/badge/📶_Internet-14b8a6?style=flat-square&labelColor=1a1d27&color=14b8a6)
+![Documents](https://img.shields.io/badge/📄_Documents-84cc16?style=flat-square&labelColor=1a1d27&color=84cc16)
+![Other](https://img.shields.io/badge/🔖_Other-64748b?style=flat-square&labelColor=1a1d27&color=64748b)
+![Income](https://img.shields.io/badge/💰_Income-22c55e?style=flat-square&labelColor=1a1d27&color=22c55e)
+
+</div>
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn
+![Node](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)
+![npm](https://img.shields.io/badge/npm_or_yarn-CB3837?style=flat-square&logo=npm&logoColor=white)
 
 ### Installation
 
@@ -101,18 +165,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open **[http://localhost:5173](http://localhost:5173)** in your browser.
 
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Deploy to GitHub Pages
+### Build & Deploy
 
 ```bash
-npm run deploy
+npm run build     # production build → /dist
+npm run deploy    # publish to GitHub Pages
 ```
 
 ---
@@ -120,12 +179,12 @@ npm run deploy
 ## 🛠️ Tech Stack
 
 | Technology | Purpose |
-|------------|---------|
-| **React 18** | UI framework |
-| **Vite** | Build tool & dev server |
-| **Recharts** | Charts & data visualization |
-| **GitHub Pages** | Free hosting & deployment |
-| **CSS-in-JS** | Dynamic theming (dark/light mode) |
+|:---|:---|
+| ⚛️ **React 18** | UI framework |
+| ⚡ **Vite** | Build tool & dev server |
+| 📊 **Recharts** | Charts & data visualization |
+| 🌐 **GitHub Pages** | Free hosting & deployment |
+| 🎨 **CSS-in-JS** | Dynamic theming (dark/light mode) |
 
 ---
 
@@ -137,6 +196,7 @@ kharcha-pro/
 │   ├── App.jsx          # Main application (all components)
 │   └── main.jsx         # React entry point
 ├── public/
+├── screenshots/         # README preview images
 ├── index.html
 ├── vite.config.js       # Vite + GitHub Pages config
 └── package.json
@@ -146,11 +206,13 @@ kharcha-pro/
 
 ## 🧑‍💻 How to Use
 
-1. **Create a Folder** — Go to Folders → New Folder. Give it a name like *"March Salary"* or *"Goa Trip"* and set a budget amount.
-2. **Add Transactions** — Click *+ Add Transaction*, fill in the amount, category, and assign it to a folder.
-3. **Track Progress** — The dashboard shows folder progress bars, charts, and balance at a glance.
-4. **Set Budgets** — Go to Settings to set monthly spending limits per category.
-5. **Export** — Go to Reports → Download CSV to get all your data in Excel format.
+| Step | Action |
+|:---:|:---|
+| 1️⃣ | **Create a folder** — Folders → New Folder. Name it *"March Salary"* or *"Goa Trip"* and set a budget. |
+| 2️⃣ | **Add a transaction** — Tap *+ Add Transaction*, fill in amount, category, and assign a folder. |
+| 3️⃣ | **Track progress** — Dashboard shows folder bars, charts, and balance at a glance. |
+| 4️⃣ | **Set budgets** — Settings → set monthly limits per category. |
+| 5️⃣ | **Export** — Reports → Download CSV for Excel or Google Sheets. |
 
 ---
 
@@ -158,26 +220,30 @@ kharcha-pro/
 
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/your-feature`
-3. Commit your changes: `git commit -m 'Add your feature'`
-4. Push to the branch: `git push origin feature/your-feature`
-5. Open a Pull Request
+```bash
+git checkout -b feature/your-feature
+git commit -m 'Add your feature'
+git push origin feature/your-feature
+```
+Then open a Pull Request 🎉
 
 ---
 
 ## 📜 License
 
-This project is licensed under the **MIT License** — free to use, modify, and distribute.
+This project is licensed under the [MIT License](./LICENSE) — free to use, modify, and distribute.
 
 ---
 
 ## 👤 Author
 
+<div align="center">
+
 **Arfan Pedekar**
-- GitHub: [@arfanpedekar](https://github.com/arfanpedekar)
-- LinkedIn: [linkedin.com/in/arfanpedekar](https://linkedin.com/in/arfanpedekar)
 
----
+[![GitHub](https://img.shields.io/badge/GitHub-@arfanpedekar-181717?style=for-the-badge&logo=github)](https://github.com/arfanpedekar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-arfanpedekar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/arfanpedekar)
 
-<p align="center">Made with ❤️ by Arfan Pedekar</p>
+Made with ❤️ and ☕
+
+</div>

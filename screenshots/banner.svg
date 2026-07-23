@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260">
+  <rect width="1200" height="260" fill="#0f1117"/>
+  <circle cx="120" cy="60" r="140" fill="#6366f1" opacity="0.10"/>
+  <circle cx="1100" cy="220" r="160" fill="#22c55e" opacity="0.08"/>
+  <g transform="translate(600,95)" text-anchor="middle">
+    <text y="0" font-family="'Segoe UI',sans-serif" font-size="54" font-weight="800" fill="#e8eaf6">
+      Kharcha<tspan fill="#6366f1">Pro</tspan>
+    </text>
+    <text y="42" font-family="'Segoe UI',sans-serif" font-size="18" fill="#8892a4">
+      Folder-based expense tracking, built with React
+    </text>
+  </g>
+  <g transform="translate(600,168)" text-anchor="middle" font-family="'Segoe UI',sans-serif" font-size="13" font-weight="600">
+    <g transform="translate(-330,0)">
+      <rect x="-58" y="-22" width="116" height="34" rx="17" fill="#22c55e18"/>
+      <text fill="#22c55e">💰 Income</text>
+    </g>
+    <g transform="translate(-160,0)">
+      <rect x="-58" y="-22" width="116" height="34" rx="17" fill="#ef444418"/>
+      <text fill="#ef4444">💸 Expenses</text>
+    </g>
+    <g transform="translate(10,0)">
+      <rect x="-58" y="-22" width="116" height="34" rx="17" fill="#8b5cf618"/>
+      <text fill="#8b5cf6">📁 Folders</text>
+    </g>
+    <g transform="translate(180,0)">
+      <rect x="-58" y="-22" width="116" height="34" rx="17" fill="#3b82f618"/>
+      <text fill="#3b82f6">📈 Analytics</text>
+    </g>
+    <g transform="translate(350,0)">
+      <rect x="-58" y="-22" width="116" height="34" rx="17" fill="#14b8a618"/>
+      <text fill="#14b8a6">📄 CSV Export</text>
+    </g>
+  </g>
+</svg>
